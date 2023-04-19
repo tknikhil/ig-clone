@@ -14,12 +14,24 @@ const Header = () => {
         <TouchableOpacity>
           <Image
             style={styles.icons}
-            source={{ url: "https://icons8.com/icon/37787/add-new" }}
+            source={require("../../assets/add.png")}
           />
         </TouchableOpacity>
-        <Text style={{ color: "#fff" }}>DUMMY</Text>
-        <Text style={{ color: "#fff" }}>DUMMY</Text>
-        <Text style={{ color: "#fff" }}>DUMMY</Text>
+        <TouchableOpacity>
+          <Image
+            style={styles.icons}
+            source={require("../../assets/heart.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <View style={styles.unreadBadge}>
+            <Text style={styles.unreadBadgeText}>11</Text>
+          </View>
+          <Image
+            style={styles.icons}
+            source={require("../../assets/messenger.png")}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -34,6 +46,8 @@ const styles = StyleSheet.create({
   },
   iconsContainer: {
     flexDirection: "row",
+    justifyContent: "space-between",
+    alignContent: "center",
   },
   logo: {
     width: 150,
@@ -43,6 +57,24 @@ const styles = StyleSheet.create({
   icons: {
     width: 30,
     height: 30,
+    marginLeft: 10,
+  },
+  unreadBadge: {
+    backgroundColor: "#ff3250",
+    position: "absolute",
+    left: 20,
+    bottom: 18,
+    width: 25,
+    height: 18,
+    borderRadius: 25,
+    alignItems: "center",
+    color: "#fff",
+    justifyContent: "center",
+    zIndex: 100,
+  },
+  unreadBadgeText: {
+    color: "white",
+    fontWeight: "600",
   },
 });
 export default Header;
